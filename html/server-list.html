@@ -1,0 +1,43 @@
+<!-- POST method -->
+<h5>Lista aktywnych serwerow</h5>
+<table>
+    <thead>
+    <tr>
+        <th>Nazwa</th>
+        <th>IP</th>
+        <th>System</th>
+        <th>Lokalizacja</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>FaaS 1</td>
+        <td>11.22.33.22</td>
+        <td>Linux Debian</td>
+        <td>Polska</td>
+        <td>
+            <form>
+                <input type="hidden" name="method" value="DELETE">
+                <input type="hidden" name="id" value="1">
+                <input type="submit" name="submit" value="Usuń">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>FaaS 2</td>
+        <td>11.22.33.25</td>
+        <td>Linux Centos</td>
+        <td>Niemcy</td>
+        <td>
+            <form>
+                <input type="hidden" name="method" value="DELETE">
+                <input type="hidden" name="id" value="2">
+                <input type="submit" name="submit" value="Usuń">
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<hr/>

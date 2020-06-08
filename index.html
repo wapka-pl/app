@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Platform as a Service - PaaS.info</title>
+
+    <script>
+        // var RESTFORM_DEBUG = false;
+        // var RESTFORM_DEBUG = true;
+        // var E_DEBUG = false;
+        // var E_DEBUG = true;
+        // var JLOADS_DEBUG = false;
+        // var JLOADS_DEBUG = true;
+        // var TARGET_DEBUG = false;
+        // var IMAGE_DEBUG = false;
+        // var HTML_DEBUG = false;
+
+        // filtering logs source
+        var print_log = function (arguments) {
+            var str = 'LOG: ';
+            for (var i in arguments) {
+                str += arguments[i];
+            }
+            console.log(str);
+            return str;
+        }
+        var log = function () {
+            print_log(arguments);
+            // arguments[0] === 'Load' || print_log();
+        }
+
+        // console.log(typeof log);
+    </script>
+
+    <script src="/js/jloads.js" type="text/javascript"></script>
+    <!--    <script src="//user.jloads.com/faas.js" type="text/javascript"></script>-->
+
+    <style>
+        /* GLOBAL */
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block; /* remove extra space below image */
+        }
+
+        body {
+            /*background-color: #fb7e14;*/
+            /*color: #fffc60;*/
+            font-family: Tahoma;
+            font-size: 25px;
+        }
+
+        h2, h3 {
+            font-size: medium;
+        }
+
+        table th {
+            font-weight: bolder;
+        }
+
+        table td {
+            padding-right: 5px;
+            /*font-weight: normal;*/
+        }
+
+        /* MODULES  Size */
+        .jloads.content,
+        .footer {
+            margin: auto auto;
+            width: 98%;
+            max-width: 1000px;
+        }
+
+        .jloads.content > div {
+            /*border: 1px solid black;*/
+            /*height: 100px;*/
+            margin: 0px;
+            padding: 4px;
+        }
+
+        #home-images {
+            padding: 0px;
+            height: 100px;
+            max-height: 100px;
+        }
+
+        #faas-form {
+            height: 250px;
+            min-height: 250px;
+        }
+
+        #faas-table {
+            height: 180px;
+            min-height: 180px;
+        }
+
+        #faas-message {
+            height: 150px;
+            max-height: 150px;
+            overflow: scroll;
+            color: black;
+        }
+
+        /* MODULES Colors, Fonts */
+        .jloads.content {
+            /*background-color: #333333;*/
+        }
+
+        #home-plugins {
+            /*background-color: #555555;*/
+        }
+
+        #home-images {
+            /*background-color: #fb7e14;*/
+        }
+
+        #faas-message {
+            /*background-color: #333333;*/
+            font-family: Consolas, "Courier New";
+            font-size: 10px;
+            color: black;
+        }
+
+
+        /*// Extra small devices (portrait phones, less than 576px)*/
+        @media (max-width: 575px) {
+
+        }
+
+        /*// Small devices (landscape phones, 576px and up)*/
+        @media (min-width: 576px) and (max-width: 767px) {
+
+        }
+
+        /*// Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) and (max-width: 991px) {
+
+        }
+
+        /*// Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) and (max-width: 1199px) {
+
+        }
+
+        /*// Extra large devices (large desktops, 1200px and up)*/
+        @media (min-width: 1200px) {
+
+        }
+
+        .fade-in {
+            animation: fadeIn ease 1s;
+            -webkit-animation: fadeIn ease 1s;
+            -moz-animation: fadeIn ease 1s;
+            -o-animation: fadeIn ease 1s;
+            -ms-animation: fadeIn ease 1s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container fade-in" id="jloads">
+    <!-- Content here -->
+    <div class="jloads content">
+        <div id="home-images"></div>
+        <!--    <div id="home-plugins"></div>-->
+        <div id="faas-form"></div>
+        <div id="faas-table"></div>
+        <div id="faas-message" class="faas-messages"></div>
+    </div>
+
+    <div class="footer">
+        <h5>local: <a href="http://localhost:80/" rel="nofollow">localhost:80/</a>
+            | live: <a href="https://www.paas.info/" rel="nofollow">paas.info</a>
+            | supported by: <a href="https://www.paas.info/" rel="nofollow">softreck.com</a>
+            | <a href="https://docs.paas.info" rel="nofollow">docs</a>
+        </h5>
+    </div>
+</div>
+
+</body>
+</html>
