@@ -233,8 +233,8 @@
         var b64 = btoa(x);
         console.log(b64);
 
-        // script.src = "//get.wapka.pl/b64/" + b64;
-        script.src = "//localhost:80/b64/" + b64;
+        script.src = "//get.wapka.pl/b64/" + b64;
+        // script.src = "//localhost:80/b64/" + b64;
         document.head.appendChild(script);
 
         document.forms["myForm"]["url"].value = script.src;
