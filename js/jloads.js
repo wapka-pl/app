@@ -1,6 +1,22 @@
 var script = document.createElement('script');
-script.src = (window.location.hostname === 'localhost') ? "//localhost:8080/load.js" : "//load.jloads.com/load.js";
+// script.src = (window.location.hostname === 'localhost') ? "//localhost:8080/load.js" : "//load.jloads.com/load.js";
 // script.src = "//load.jloads.com/load.js";
+var b64 = btoa('{\n' +
+    '  "head": [\n' +
+    '    "//code.jquery.com/ui/1.12.1/jquery-ui.min.js",\n' +
+    '    "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",\n' +
+    '    "//code.jquery.com/jquery-3.5.1.min.js",\n' +
+    '    "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",\n' +
+    '    "//load.jloads.com/css/pink.css"\n' +
+    '  ],\n' +
+    '  "#image": [\n' +
+    '    "//logo.jloads.com/6/cover.png"\n' +
+    '  ]\n' +
+    '}');
+console.log(b64);
+
+script.src = "//get.wapka.pl/b64/"+b64;
+
 document.head.appendChild(script);
 
 script.onload = function () {
@@ -22,6 +38,7 @@ script.onload = function () {
         console.error('!loaded', data);
     };
 
+/*
 
     var media = new Load(document.body, success, error);
     // media.env("//localhost:80/", "local", function () {
@@ -106,6 +123,7 @@ script.onload = function () {
         "js/form.js",
         "js/message.js"
     ]);
+*/
 
     // TODO: succes only after loading all, not each
 
