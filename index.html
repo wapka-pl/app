@@ -26,8 +26,9 @@
         // console.log(typeof log);
     </script>
 
-<!--    <script src="/js/jloads.js" type="text/javascript"></script>-->
-    <script src="//get.wapka.pl/b64/ewogICJoZWFkIjogWwogICAgIi8vY29kZS5qcXVlcnkuY29tL3VpLzEuMTIuMS9qcXVlcnktdWkubWluLmpzIiwKICAgICIvL3N0YWNrcGF0aC5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC80LjQuMS9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiLAogICAgIi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0zLjUuMS5taW4uanMiLAogICAgIi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzQuNC4xL2pzL2Jvb3RzdHJhcC5taW4uanMiLAogICAgIi8vbG9hZC5qbG9hZHMuY29tL2Nzcy9waW5rLmNzcyIKICBdLAogICIjaW1hZ2UiOiBbCiAgICAiLy9sb2dvLmpsb2Fkcy5jb20vNi9jb3Zlci5wbmciCiAgXQp9" type="text/javascript"></script>
+    <!--    <script src="/js/jloads.js" type="text/javascript"></script>-->
+    <!--    <script src="//get.wapka.pl/b64/ewogICJoZWFkIjogWwogICAgIi8vY29kZS5qcXVlcnkuY29tL3VpLzEuMTIuMS9qcXVlcnktdWkubWluLmpzIiwKICAgICIvL3N0YWNrcGF0aC5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC80LjQuMS9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiLAogICAgIi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0zLjUuMS5taW4uanMiLAogICAgIi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzQuNC4xL2pzL2Jvb3RzdHJhcC5taW4uanMiLAogICAgIi8vbG9hZC5qbG9hZHMuY29tL2Nzcy9waW5rLmNzcyIKICBdLAogICIjaW1hZ2UiOiBbCiAgICAiLy9sb2dvLmpsb2Fkcy5jb20vNi9jb3Zlci5wbmciCiAgXQp9"-->
+    <!--            type="text/javascript"></script>-->
     <!--    <script src="//user.jloads.com/faas.js" type="text/javascript"></script>-->
 
     <style>
@@ -198,6 +199,49 @@
 
 </head>
 <body>
+<!--//  onsubmit="return loader()"-->
+<form name="myForm" id="myForm" action="" method="post">
+
+    <textarea name="json" id="json" cols="90" rows="18"></textarea>
+    <textarea name="url" id="url" cols="90" rows="8"></textarea>
+
+    <input type="submit"
+           name="submit"
+           value="LOAD"
+    >
+    <!--           onclick="loader"-->
+
+</form>
+
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        loader();
+        console.log("form is submitted");
+    });
+
+    function loader() {
+        var x = document.forms["myForm"]["json"].value;
+        if (x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+
+        var script = document.createElement('script');
+        // script.src = (window.location.hostname === 'localhost') ? "//localhost:8080/load.js" : "//load.jloads.com/load.js";
+        // script.src = "//load.jloads.com/load.js";
+        var b64 = btoa(x);
+        console.log(b64);
+
+        // script.src = "//get.wapka.pl/b64/" + b64;
+        script.src = "//localhost:80/b64/" + b64;
+        document.head.appendChild(script);
+
+        document.forms["myForm"]["url"].value = script.src;
+    }
+
+</script>
+
 
 <div class="container fade-in" id="jloads">
 
