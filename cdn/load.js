@@ -18,6 +18,7 @@ function getXHRObject() {
             break;
         }
     } finally {
+
         return xhrObj;
     }
 }
@@ -284,38 +285,47 @@ function includeHtml(url, target, replace, success, error) {
 
     if (url) {
         /* Make an HTTP request using the attribute value as the url name: */
-        var xhttp = getXHRObject();
-        xhttp.onreadystatechange = function () {
+        var xhrObj = getXHRObject();
+        // xhrObj.setRequestHeader("Content-Type","text/html; charset=UTF-8");
+        // xhrObj.setRequestHeader("Content-Type","multipart/form-data; boundary=something");
+        xhrObj.onreadystatechange = function () {
 
-            log(this.constructor.name, ' includeHtml target: ', target);
-            console.log(target);
+            log('includeHtml getXHRObject', ' includeHtml target: ', target);
 
             if (this.readyState == 4) {
-                window.onload = function () {
-                    log(this.constructor.name, ' includeHtml waiting for DOM tree ', url, getTarget(target));
-
-                    if (this.status == 200) {
-                        log(this.constructor.name, ' includeHtml loaded HTML: ', this.responseText);
-                        getTarget(target).insertAdjacentHTML('beforeend', this.responseText);
-                        success(this);
-                    }
-                    if (this.status == 404) {
-                        getTarget(target).innerHTML = "includeHtml Page not found.";
-                        error(this);
-                    }
-                }
+                // document.onload =
+                loadHtmlByStatus(this.status, this.responseText, target, success, error);
 
                 /* Remove the attribute, and call this function once more: */
                 // includeHtml(url, success, error);
             }
         }
-        xhttp.open("GET", url, true);
-        xhttp.send();
+        xhrObj.open("GET", url, true);
+        // xhrObj.responseType = 'text';
+        xhrObj.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+        xhrObj.send();
         /* Exit the function: */
         return this;
     }
     return false;
 
+}
+
+function loadHtmlByStatus(status, responseText, target, success, error) {
+    this.constructor.name = 'loadHtmlByStatus';
+
+    log(this.constructor.name, ' includeHtml waiting for DOM tree ', getTarget(target));
+
+    if (status == 200) {
+        log(this.constructor.name, ' includeHtml loaded HTML: ', responseText);
+        getTarget(target).insertAdjacentHTML('beforeend', responseText);
+        return success(this);
+    }
+    if (status == 404) {
+        getTarget(target).innerHTML = "includeHtml Page not found.";
+        return error(this, status);
+    }
+    return error(this);
 }
 // include-image.js
 if (typeof log !== 'function') {
