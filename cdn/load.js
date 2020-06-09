@@ -78,17 +78,18 @@ if (typeof log !== 'function') {
  * @returns {HTMLHeadElement}
  */
 function getTarget(target) {
-    log(this.constructor.name, ' target ', target);
+    this.constructor.name = 'getTarget';
+
+    // log(this.constructor.name, ' target ', target);
     if (isEmpty(target)) {
         target = document.getElementsByTagName('head')[0];
-        log(this.constructor.name, ' HEAD ', target, typeof target, target.innerHTML !== 'undefined',  target.innerHTML.length, Object.keys(target));
+        log(this.constructor.name, ' isEmpty HEAD ', target, typeof target, target.innerHTML !== 'undefined',  target.innerHTML.length, Object.keys(target));
         if (isEmpty(target)) {
             target = document.body;
-            log(this.constructor.name, ' BODY ', target);
+            log(this.constructor.name, ' isEmpty BODY ', target);
         }
     }
-    log(this.constructor.name, ' target ', target);
-    console.log(' getTarget ', target);
+    log(this.constructor.name, ' target: ', target);
 
     return target;
 }
@@ -264,40 +265,46 @@ if (typeof log !== 'function') {
  */
 function includeHtml(url, target, replace, success, error) {
 
-    var xhttp;
-
     if (typeof replace === 'number' && replace === 1) {
         replace = true;
     }
 
     if (typeof success !== 'function') {
         success = function () {
-            log(this.constructor.name, 'includeHtml success', "included");
+            log(this.constructor.name, ' includeHtml success ', "included");
         }
     }
 
     if (typeof error !== 'function') {
         error = function () {
-            log(this.constructor.name, 'includeHtml error', "Page not found.");
+            log(this.constructor.name, ' includeHtml error ', "Page not found.");
         }
     }
-    log(this.constructor.name, 'includeHtml url', url);
+    log(this.constructor.name, ' includeHtml url ', url);
 
     if (url) {
         /* Make an HTTP request using the attribute value as the url name: */
-        xhttp = new XMLHttpRequest();
+        var xhttp = getXHRObject();
         xhttp.onreadystatechange = function () {
-            log(this.constructor.name, ' includeHtml el_id ', target);
+
+            log(this.constructor.name, ' includeHtml target: ', target);
+            console.log(target);
 
             if (this.readyState == 4) {
-                if (this.status == 200) {
-                    getTarget(target).insertAdjacentHTML('beforeend', this.responseText);
-                    success(this);
+                window.onload = function () {
+                    log(this.constructor.name, ' includeHtml waiting for DOM tree ', url, getTarget(target));
+
+                    if (this.status == 200) {
+                        log(this.constructor.name, ' includeHtml loaded HTML: ', this.responseText);
+                        getTarget(target).insertAdjacentHTML('beforeend', this.responseText);
+                        success(this);
+                    }
+                    if (this.status == 404) {
+                        getTarget(target).innerHTML = "includeHtml Page not found.";
+                        error(this);
+                    }
                 }
-                if (this.status == 404) {
-                    getTarget(target).innerHTML = "includeHtml Page not found.";
-                    error(this);
-                }
+
                 /* Remove the attribute, and call this function once more: */
                 // includeHtml(url, success, error);
             }
