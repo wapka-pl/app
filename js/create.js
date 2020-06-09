@@ -8,10 +8,12 @@
 //     });
 // }
 
-function loader() {
+function loader(event) {
+    event.preventDefault();
+
     var x = document.forms["myForm"]["json"].value;
     if (x == "") {
-        alert("Name must be filled out");
+        alert("Field JSON must be filled out");
         return false;
     }
 
