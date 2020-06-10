@@ -8,8 +8,7 @@ document.onload = function () {
     });
 }
 
-function loader(event) {
-    event.preventDefault();
+function loader() {
 
     var x = document.forms["myForm"]["json"].value;
     if (x == "") {
