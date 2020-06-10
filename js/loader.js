@@ -12,7 +12,7 @@ function check(selector) {
     }
 }
 
-check('create');
+check('#create');
 
 
 function setEventForLoader(){
