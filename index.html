@@ -12,9 +12,10 @@
     <script>
         // filtering logs source
         var print_log = function (arguments) {
-            var str = 'LOG: ';
+            var str = ' : ';
             for (var i in arguments) {
                 str += arguments[i];
+                str += ', ';
             }
             console.log(str);
             return str;
@@ -219,6 +220,7 @@
         var str = ' ::: ';
         for (var i in arguments) {
             str += arguments[i];
+            str += ', ';
         }
         console.log(str);
         return str;
