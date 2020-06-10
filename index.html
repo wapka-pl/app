@@ -7,8 +7,8 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <title>JS Solutions - wapka.pl</title>
-    <script src="cdn/load.js?6"></script>
-<!--    <script src="//load.jloads.com/load.js"></script>-->
+    <!--    <script src="cdn/load.js?6"></script>-->
+    <script src="//load.jloads.com/load.js"></script>
 
     <script>
         // filtering logs source
@@ -26,7 +26,7 @@
         }
 
         loadAll({
-            "head" : [
+            "head": [
                 "//code.jquery.com/jquery-3.5.1.min.js",
                 "//code.jquery.com/ui/1.12.1/jquery-ui.min.js",
                 "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
@@ -188,14 +188,17 @@
 <body>
 
 
-
 <div class="container fade-in">
 
     <!-- Content here -->
     <div class="jloads content">
 
-        <div id="image">image</div>
-        <div id="form">form</div>
+        <div id="image">
+            <h2>Logo</h2>
+        </div>
+        <div id="form">
+            <h2>form</h2>
+        </div>
 
     </div>
 
@@ -210,23 +213,24 @@
 </div>
 
 
+<iframe src="test.html" frameborder="0" width="992" height="500" scrolling="yes"></iframe>
 
 
 <script>
     loadAll({
-        // "head" : [
-        //     "//code.jquery.com/ui/1.12.1/jquery-ui.min.js",
-        //     "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
-        //     "//code.jquery.com/jquery-3.5.1.min.js",
-        //     "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
-        //     "css/style.css"
-        // ],
-        "#image" : [
+        "head": [
+            "//code.jquery.com/ui/1.12.1/jquery-ui.min.js",
+            "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+            "//code.jquery.com/jquery-3.5.1.min.js",
+            "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+            "https://app.wapka.pl/css/style.css"
+        ],
+        "#image": [
             "https://logo.jloads.com/6/cover.png"
         ],
-        "#form" : [
-            "html/create.html",
-            "js/create.js"
+        "#form": [
+            "https://app.wapka.pl/html/create.html",
+            "https://app.wapka.pl/js/create.js"
         ]
     });
 </script>
