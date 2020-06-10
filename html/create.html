@@ -1,5 +1,5 @@
 <div class="create.html">
-    <form name="myForm" id="myForm" action="" method="post" onsubmit="return loader()">
+    <form name="myForm" id="myForm" action="" method="post" onsubmit="return false; loader();">
 
         <textarea name="json" id="json" cols="90" rows="18"></textarea>
         <textarea name="url" id="url" cols="90" rows="8"></textarea>
@@ -7,7 +7,7 @@
         <input type="submit"
                name="submit"
                value="LOAD"
-               onclick="return loader()"
+               onclick="return false; loader();"
         >
     </form>
 </div>
