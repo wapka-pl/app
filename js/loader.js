@@ -1,7 +1,22 @@
-// create.js
+// loader.js
 
 document.onload = function () {
-    document.getElementById("myForm").addEventListener("submit", function (event) {
+
+}
+
+function check(selector) {
+    if (document.querySelector(selector) ) {
+        setEventForLoader();
+    }else {
+        loader();
+    }
+}
+
+check('create');
+
+
+function setEventForLoader(){
+    document.getElementById("create").addEventListener("submit", function (event) {
         event.preventDefault();
         loader();
         console.log("form is submitted");
@@ -10,7 +25,7 @@ document.onload = function () {
 
 function loader() {
 
-    var x = document.forms["myForm"]["json"].value;
+    var x = document.forms["create"]["json"].value;
     if (x == "") {
         alert("Field JSON must be filled out");
         return false;
@@ -26,7 +41,7 @@ function loader() {
     // script.src = "//localhost:80/b64/" + b64;
     document.head.appendChild(script);
 
-    document.forms["myForm"]["url"].value = script.src;
+    document.forms["create"]["url"].value = script.src;
 
     return false;
 }

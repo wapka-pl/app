@@ -1,13 +1,5 @@
 // create.js
 
-// document.onload = function () {
-//     document.getElementById("myForm").addEventListener("submit", function (event) {
-//         event.preventDefault();
-//         loader();
-//         console.log("form is submitted");
-//     });
-// }
-
 function loader(event) {
     event.preventDefault();
 
