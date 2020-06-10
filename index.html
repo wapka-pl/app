@@ -10,20 +10,6 @@
     <!--    <script src="cdn/load.js?6"></script>-->
 
     <script>
-        // filtering logs source
-        var print_log = function (arguments) {
-            var str = ' : ';
-            for (var i in arguments) {
-                str += arguments[i];
-                str += ', ';
-            }
-            console.log(str);
-            return str;
-        }
-        var log = function () {
-            return print_log(arguments);
-            // arguments[0] === 'Load' || print_log();
-        }
 
         // loadAll({
         //     "head": [
@@ -216,19 +202,7 @@
 
 
 <script>
-    var print_log = function (arguments) {
-        var str = ' ::: ';
-        for (var i in arguments) {
-            str += arguments[i];
-            str += ', ';
-        }
-        console.log(str);
-        return str;
-    }
-    var log = function () {
-        return print_log(arguments);
-        // arguments[0] === 'Load' || print_log();
-    }
+
 
     loadAll({
         "head": [
