@@ -203,6 +203,11 @@
 
 <script>
 
+    var log = function () {
+        return print_log(arguments);
+        // arguments[0] === 'Load' || print_log();
+    }
+
     loadAll({
         "head": [
             "//code.jquery.com/ui/1.12.1/jquery-ui.min.js",
