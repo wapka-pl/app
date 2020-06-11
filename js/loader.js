@@ -1,8 +1,11 @@
 // loader.js
 
 waitForElementToDisplay('#submit', 200, function (i){
+
+    console.log('waitForElementToDisplay i', i);
+
     var elem = document.querySelectorAll(i)[0] || document.querySelectorAll(i);
-    console.log('waitForElementToDisplay i elem', i, elem, elem["json"]);
+    console.log('waitForElementToDisplay elem', elem, elem["json"]);
 
     elem.addEventListener("click", function (event) {
         event.preventDefault();
