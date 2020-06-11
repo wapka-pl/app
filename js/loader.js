@@ -1,6 +1,6 @@
 // loader.js
 jlogs('exist?','loader.waitForElementToDisplay');
-waitForElementToDisplay('#create', 70, function (i){
+waitForElementToDisplay('#create', 30, function (i){
 
     jlogs('waitForElementToDisplay i', i);
 
