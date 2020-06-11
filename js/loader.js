@@ -1,5 +1,5 @@
 // loader.js
-
+log('exist?','loader.waitForElementToDisplay');
 waitForElementToDisplay('#submit', 200, function (i){
 
     console.log('waitForElementToDisplay i', i);
@@ -14,6 +14,11 @@ waitForElementToDisplay('#submit', 200, function (i){
     });
 });
 
+log('exist?','loader');
+/**
+ * @param elem
+ * @returns {boolean}
+ */
 function loader(elem) {
 
     console.log('loader elem', elem, elem["json"]);
