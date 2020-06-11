@@ -16,14 +16,14 @@ waitForElementToDisplay('#create', 200, function (i){
 
 jlogs('exist?','loader');
 /**
- * @param elem
+ * @param form
  * @returns {boolean}
  */
-function loader(elem) {
+function loader(form) {
 
-    jlogs('loader elem', elem, elem["json"]);
+    jlogs('loader form', form, form["json"]);
 
-    var x = elem["json"].value;
+    var x = form["json"].value;
     if (x == "") {
         alert("Field JSON must be filled out");
         return false;
@@ -33,13 +33,13 @@ function loader(elem) {
     // script.src = (window.location.hostname === 'localhost') ? "//localhost:8080/load.js" : "//load.jloads.com/load.js";
     // script.src = "//load.jloads.com/load.js";
     var b64 = btoa(x);
-    jlogs(b64);
+    jlogs('loader b64',b64);
 
     script.src = "//get.wapka.pl/b64/" + b64;
     // script.src = "//localhost:80/b64/" + b64;
     document.head.appendChild(script);
 
-    elem["url"].value = script.src;
+    form["url"].value = script.src;
 
     return false;
 }
