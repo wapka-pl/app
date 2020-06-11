@@ -1,27 +1,13 @@
 // loader.js
 
-document.onload = function () {
-
-}
-
-function check(selector) {
-    if (document.querySelector(selector) ) {
-        setEventForLoader();
-    }else {
-        loader();
-    }
-}
-
-check('#create');
-
-
-function setEventForLoader(){
-    document.getElementById("create").addEventListener("submit", function (event) {
+waitForElementToDisplay('#create', 200, function (i){
+    var elem = document.querySelectorAll(i)[0] || document.querySelectorAll(i);
+    elem.addEventListener("submit", function (event) {
         event.preventDefault();
         loader();
         console.log("form is submitted");
     });
-}
+});
 
 function loader() {
 
