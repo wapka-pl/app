@@ -4,14 +4,16 @@ waitForElementToDisplay('#create', 200, function (i){
     var elem = document.querySelectorAll(i)[0] || document.querySelectorAll(i);
     elem.addEventListener("submit", function (event) {
         event.preventDefault();
-        loader();
+        loader(elem);
         console.log("form is submitted");
     });
 });
 
-function loader() {
+function loader(elem) {
 
-    var x = document.forms["create"]["json"].value;
+    console.log('loader elem', elem, elem["json"]);
+
+    var x = elem["json"].value;
     if (x == "") {
         alert("Field JSON must be filled out");
         return false;
@@ -27,7 +29,7 @@ function loader() {
     // script.src = "//localhost:80/b64/" + b64;
     document.head.appendChild(script);
 
-    document.forms["create"]["url"].value = script.src;
+    elem["url"].value = script.src;
 
     return false;
 }
