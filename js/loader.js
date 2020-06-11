@@ -1,8 +1,8 @@
 // loader.js
 
-waitForElementToDisplay('#create', 200, function (i){
+waitForElementToDisplay('#submit', 200, function (i){
     var elem = document.querySelectorAll(i)[0] || document.querySelectorAll(i);
-    elem.addEventListener("submit", function (event) {
+    elem.addEventListener("click", function (event) {
         event.preventDefault();
         loader(elem);
         console.log("form is submitted");
