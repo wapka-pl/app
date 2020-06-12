@@ -3,29 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>app.wapka.pl Test</title>
-
-    <script>
-        // {
-        //     "body": [
-        //         "https://logo.jloads.com/6/cover.png",
-        //         "https://app.wapka.pl/html/create.html",
-        //         "https://app.wapka.pl/js/create.js"
-        //     ]
-        // }
-        var log = function () {
-            return print_log(arguments);
-            // arguments[0] === 'Load' || print_log();
-        }
-    </script>
-
-<!--        <script src="https://get.wapka.pl/b64/ICAgICAgICB7CiAgICAgICAgICAgICJib2R5IiA6IFsKICAgICAgICAgICAgICAgICJodHRwczovL2xvZ28uamxvYWRzLmNvbS82L2NvdmVyLnBuZyIsCiAgICAgICAgICAgICAgICAiaHR0cHM6Ly9hcHAud2Fwa2EucGwvaHRtbC9jcmVhdGUuaHRtbCIsCiAgICAgICAgICAgICAgICAiaHR0cHM6Ly9hcHAud2Fwa2EucGwvanMvY3JlYXRlLmpzIgogICAgICAgICAgICBdCiAgICAgICAgfQ=="></script>-->
-<!--    <script src="http://localhost/base64.php?b64=ICAgICAgICB7CiAgICAgICAgICAgICJib2R5IiA6IFsKICAgICAgICAgICAgICAgICJodHRwczovL2xvZ28uamxvYWRzLmNvbS82L2NvdmVyLnBuZyIsCiAgICAgICAgICAgICAgICAiaHR0cHM6Ly9hcHAud2Fwa2EucGwvaHRtbC9jcmVhdGUuaHRtbCIsCiAgICAgICAgICAgICAgICAiaHR0cHM6Ly9hcHAud2Fwa2EucGwvanMvY3JlYXRlLmpzIgogICAgICAgICAgICBdCiAgICAgICAgfQ=="></script>-->
-<!--    <script defer src="//get.wapka.pl/b64/ewogICJoZWFkIjogWwogICAgIi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0zLjUuMS5taW4uanMiLAogICAgIi8vY29kZS5qcXVlcnkuY29tL3VpLzEuMTIuMS9qcXVlcnktdWkubWluLmpzIiwKICAgICIvL3N0YWNrcGF0aC5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC80LjQuMS9qcy9ib290c3RyYXAubWluLmpzIiwKICAgICIvL3N0YWNrcGF0aC5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC80LjQuMS9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiLAogICAgIi8vYXBwLndhcGthLnBsL2Nzcy9zdHlsZS5jc3MiCiAgXSwKICAiYm9keSI6IFsKICAgICIvL2FwcC53YXBrYS5wbC9odG1sL2JvZHkuaHRtbCIKICBdLAogICIjaW1hZ2UiOiBbCiAgICAiLy9sb2dvLndhcGthLnBsL3dhcGthLTMwMC5wbmciCiAgXSwKICAiI2Zvcm0iOiBbCiAgICAiLy9hcHAud2Fwa2EucGwvaHRtbC9jcmVhdGUuaHRtbCIsCiAgICAiLy9hcHAud2Fwa2EucGwvanMvbG9hZGVyLmpzIgogIF0KfQ=="></script>-->
     <script defer src="//get.wapka.pl/b64/ewogICJoZWFkIjogWwogICAgIi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0zLjUuMS5taW4uanMiLAogICAgIi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzQuNC4xL2pzL2Jvb3RzdHJhcC5taW4uanMiLAogICAgIi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzQuNC4xL2Nzcy9ib290c3RyYXAubWluLmNzcyIsCiAgICAiLy9hcHAud2Fwa2EucGwvY3NzL3N0eWxlLmNzcyIKICBdLAogICJib2R5IjogWwogICAgIi8vYXBwLndhcGthLnBsL2h0bWwvYm9keS5odG1sIgogIF0sCiAgIiNmb3JtIjogWwogICAgIi8vYXBwLndhcGthLnBsL2h0bWwvY3JlYXRlLmh0bWwiLAogICAgIi8vYXBwLndhcGthLnBsL2pzL2xvYWRlci5qcyIKICBdLAogICIjaW1hZ2UiOiBbCiAgICAiLy9sb2dvLndhcGthLnBsL3dhcGthLTMwMC5wbmciCiAgXQp9"></script>
-<!--    <script src="//get.wapka.pl/b64/ewogICJoZWFkIjogWwogICAgIi8vYXBwLndhcGthLnBsL2Nzcy9zdHlsZS5jc3MiCiAgXSwKICAiYm9keSI6IFsKICAgICIvL2FwcC53YXBrYS5wbC9odG1sL2JvZHkuaHRtbCIKICBdLAogICIjaW1hZ2UiOiBbCiAgICAiLy9sb2dvLndhcGthLnBsL3dhcGthLTMwMC5wbmciCiAgXSwKICAiI2Zvcm0iOiBbCiAgICAiLy9hcHAud2Fwa2EucGwvaHRtbC9jcmVhdGUuaHRtbCIsCiAgICAiLy9hcHAud2Fwa2EucGwvanMvbG9hZGVyLmpzIgogIF0KfQ=="></script>-->
-
 </head>
 <body>
-<div></div>
 </body>
 </html>

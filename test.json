@@ -10,7 +10,7 @@
   ],
   "#form": [
     "//app.wapka.pl/html/create.html",
-    "//app.wapka.pl/js/loader.js"
+    "//app.wapka.pl/js/create.js"
   ],
   "#image": [
     "//logo.wapka.pl/wapka-300.png"

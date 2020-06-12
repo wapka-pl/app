@@ -9,7 +9,7 @@ waitForElementToDisplay('#create', 30, function (i){
 
     elem.addEventListener("submit", function (event) {
         event.preventDefault();
-        loader(elem);
+        create(elem);
         jlogs("form is submitted");
     });
 });
@@ -19,7 +19,7 @@ jlogs('exist?','loader');
  * @param form
  * @returns {boolean}
  */
-function loader(form) {
+function create(form) {
 
     jlogs('loader form', form, form["json"]);
 
