@@ -5,3 +5,6 @@ Frontend side of Wapka APP
 
 # www 
 https://app.wapka.pl/
+
+
+## [changelog.md](changelog.md)
