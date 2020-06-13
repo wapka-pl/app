@@ -197,3 +197,149 @@ nav.first_menu {
 .inline  {
     /*display: inline-block;*/
 }
+
+
+/* GLOBAL */
+img {
+    max-width: 100%;
+    max-height: 100px;
+    display: block; /* remove extra space below image */
+}
+
+body {
+    /*background-color: #fb7e14;*/
+    /*color: #fffc60;*/
+    font-family: Tahoma;
+    font-size: 25px;
+}
+textarea, input, select {
+    margin-top: 5px;
+    padding: 0px;
+    display: block;
+    min-width: 350px;
+    width: 90%;
+}
+h2, h3 {
+    font-size: medium;
+}
+
+table th {
+    font-weight: bolder;
+}
+
+table td {
+    padding-right: 5px;
+    /*font-weight: normal;*/
+}
+
+/* MODULES  Size */
+.jloads.content,
+.footer {
+    margin: auto auto;
+    width: 98%;
+    max-width: 1000px;
+}
+
+.jloads.content > div {
+    /*border: 1px solid black;*/
+    /*height: 100px;*/
+    margin: 0px;
+    padding: 4px;
+}
+
+#form {
+    /*height: 250px;*/
+    min-height: 450px;
+}
+
+
+/* MODULES Colors, Fonts */
+.jloads.content {
+    /*background-color: #333333;*/
+}
+
+#wapka-message {
+    /*background-color: #333333;*/
+    font-family: Consolas, "Courier New";
+    font-size: 10px;
+    color: black;
+}
+
+
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+
+.fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
