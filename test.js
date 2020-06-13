@@ -1166,8 +1166,8 @@ function loader(form) {
     }
 
     var script = document.createElement('script');
-    // script.src = (window.location.hostname === 'localhost') ? "//localhost:8080/load.js" : "//load.jloads.com/load.js";
-    // script.src = "//load.jloads.com/load.js";
+    // script.src = (window.location.hostname === 'localhost') ? "//localhost:8080/load.js" : "//get.jloads.com/load.js";
+    // script.src = "//get.jloads.com/load.js";
     var b64 = btoa(x);
     jlogs('loader b64', b64);
 
