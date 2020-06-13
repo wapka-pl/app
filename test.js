@@ -290,7 +290,7 @@ function ReadyHtml(object, i, mapFunction, success, error) {
         loadContentByUrls(jloads, object, mapFunction, success, error);
         success(elem);
     } else {
-        waitForElementToDisplay(i, 200, function (i) {
+        waitFor(i, 200, function (i) {
             var elem = document.querySelectorAll(i)[0] || document.querySelectorAll(i);
             var jloads = new Load(elem, success, error);
             loadContentByUrls(jloads, object, mapFunction, success, error);
@@ -299,7 +299,7 @@ function ReadyHtml(object, i, mapFunction, success, error) {
     }
 }
 
-jlogs('exist?', 'waitForElementToDisplay');
+jlogs('exist?', 'waitFor');
 
 /**
  *
@@ -308,15 +308,15 @@ jlogs('exist?', 'waitForElementToDisplay');
  * @param callback
  * @returns {*}
  */
-function waitForElementToDisplay(selector, time, callback) {
-    const f = 'waitForElementToDisplay';
+function waitFor(selector, time, callback) {
+    const f = 'waitFor';
     jlogs(f, ' selector ', selector);
     if (document.querySelector(selector) != null) {
         // alert("The element is displayed, you can put your code instead of this alert.")
         return callback(selector);
     } else {
         setTimeout(function () {
-            waitForElementToDisplay(selector, time, callback);
+            waitFor(selector, time, callback);
         }, time);
     }
 }
@@ -1134,13 +1134,13 @@ loadAll(json, success, error);
 //1
 // //app.wapka.pl/js/loader.js
 // loader.js
-jlogs('exist?', 'loader.waitForElementToDisplay');
-waitForElementToDisplay('#create', 200, function (i) {
+jlogs('exist?', 'loader.waitFor');
+waitFor('#create', 200, function (i) {
 
-    jlogs('waitForElementToDisplay i', i);
+    jlogs('waitFor i', i);
 
     var elem = document.querySelectorAll(i)[0] || document.querySelectorAll(i);
-    jlogs('waitForElementToDisplay elem', elem, elem["json"]);
+    jlogs('waitFor elem', elem, elem["json"]);
 
     elem.addEventListener("submit", function (event) {
         event.preventDefault();

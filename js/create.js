@@ -1,11 +1,11 @@
 // loader.js
-jlogs('exist?','loader.waitForElementToDisplay');
-waitForElementToDisplay('#create', 30, function (i){
+jlogs('exist?','loader.waitFor');
+waitFor('#create', 30, function (i){
 
-    jlogs('waitForElementToDisplay i', i);
+    jlogs('waitFor i', i);
 
     var elem = document.querySelectorAll(i)[0] || document.querySelectorAll(i);
-    jlogs('waitForElementToDisplay elem', elem, elem["json"]);
+    jlogs('waitFor elem', elem, elem["json"]);
 
     elem.addEventListener("submit", function (event) {
         event.preventDefault();
